@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import Left from './left.png'
+import Left from './images/left.png'
 
 
-class History extends Component {
-    render() {
+const History =( ) => {
+    
 
         const JumboDiv = styled.div`
          height: 700px;
@@ -21,9 +21,9 @@ class History extends Component {
         `;
 
         const BackLink = styled.p`
+            text-decoration: none;
             font-size: 12px;
             margin-top:50px;
-            
             color: #a6a6a6;
         `;
 
@@ -36,11 +36,13 @@ class History extends Component {
         height:10px;
         margin-right:5px;
     `;
+
+    
         return (
             <React.Fragment>
                 <JumboDiv className="jumbotron">
                     <h1 className="display-5">pickar</h1>
-                    <BackLink><Link to="/"> <span><Image src={Left} alt="Left" /></span>Go back</Link></BackLink>
+                    <Link to="/"> <BackLink><span><Image src={Left} alt="Left" /></span>Go back </BackLink></Link>
                     <BodyDiv>
                     <div className="container">
                         <div className="row">
@@ -62,9 +64,10 @@ class History extends Component {
                         </div>
                     </div>
                     </BodyDiv>
+                    
                 </JumboDiv>
             </React.Fragment>
         )
-    }
+    
 }
 export default History;

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import Right from './right.png'
+import Right from './images/right.png'
 
 
 const Display = () => {
@@ -17,10 +17,12 @@ const Display = () => {
          
         `;
     const ConvertHis = styled.p`
+        text-decoration: none;
         text-align: right;
         font-size: 14px;
         margin-top: -40px;
         color: #4d4d4d;
+        
     `;
 
     const Image = styled.img`
@@ -28,7 +30,7 @@ const Display = () => {
     `;
     const P = styled.p`
       font-size: 22px;
-      margin: 100px 0px 10px 0px;
+      margin: 80px 0px 10px 0px;
       color: #4d4d4d;
     `;
 
@@ -37,10 +39,11 @@ const Display = () => {
       font-size: 40px;
       font-weight:bold;
     `;
+
         return (
             <React.Fragment>
                 <JumboDiv className="jumbotron">
-                    <ConvertHis> <Link to ="/history">view conversion history <span><Image src={Right} alt="right" /></span> </Link></ConvertHis>
+                     <Link to ="/history"><ConvertHis>view conversion history <span><Image src={Right} alt="right" /></span></ConvertHis> </Link>
                     <P> 1 EUR = </P>
                     <ConvertedToDiv > 1.12392 USD</ConvertedToDiv>
                 </JumboDiv>

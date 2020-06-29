@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Exchange from './exchange.png'
+import Exchange from './images/exchange.png'
 
 class Converter extends Component {
     render() {

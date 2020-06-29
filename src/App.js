@@ -9,14 +9,12 @@ const App = () => {
  
   return (
     <BrowserRouter>
-    
-    <React.Fragment>
-      <div class="container">
-          <Route exact path="/" component ={Main} />
-          <Route path="/history" component={History} />
-      </div>
-       
-    </React.Fragment>
+        <React.Fragment>
+          <div class="container">
+            <Route exact path="/" component ={Main} />
+            <Route path="/history" component={History} />
+          </div>
+        </React.Fragment>
     </BrowserRouter>
   );
 }
