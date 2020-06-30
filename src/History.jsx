@@ -34,6 +34,7 @@ const History =({todos} ) => {
         const Image = styled.img`
         height:10px;
         margin-right:5px;
+        filter:grayscale(100%);
     `;
 
     

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {BrowserRouter, Route} from 'react-router-dom'
-import axios from 'axios'
+//import axios from 'axios'
 import Main from './Main'
 import History from './History'
 //import About from './About'
@@ -11,6 +11,8 @@ state={
   amount : 10,
   from:'EUR',
   tof: 'USD',
+  isLoaded:false,
+  item:{},
   histories:[
     {id:1, amount:10, from:"EUR", to:"USD"},
     {id:2, amount:20, from:"USD", to:"CAD"}
@@ -18,14 +20,22 @@ state={
 }
 
 componentDidMount() {
-  axios.get(`http://api.currencylayer.com/convert
+  fetch(`http://api.currencylayer.com/convert
   ? access_key = 3c4c32d5507977e1facd40bf20fa702f
   & from = USD
   & to = EUR
   & amount = 25
   & format = 1
   & date = YYYY-MM-DD`)
-    .then(res => console.log(res.data))
+    .then(res =>res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          item: result.items
+        });
+      }
+    )
 }
 
 handleFrom = (e) =>{
@@ -48,7 +58,10 @@ handleTo = (e) =>{
 
 handleSubmit = (e) =>{
   e.preventDefault()
-  console.log(e)
+  let histories = [...this.state.histories, this.state.item]
+  this.setState({
+    histories : histories
+  })
 }
  render(){
   return (

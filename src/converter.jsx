@@ -2,45 +2,46 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Exchange from './images/exchange.png'
 
+const Wrapper = styled.div`
+position: absolute;
+height:120px;
+width:800px;
+font-size:12px;
+background: #ffffff;
+margin-left:60px; 
+margin-top:-80px;
+padding: 20px;
+border: 2px solid #e6e6e6;
+border-radius: 15px;
+
+`;
+
+const Image = styled.img`
+height:20px;
+margin:35px 10px;
+`;
+
+const Button = styled.button`
+width:120px;
+height:45px;
+font-size:16px;
+border: 2px solid #e6e6e6;
+border-radius: 10px;
+margin:22px 10px; 
+background:#fa3838;
+color: white;
+`;
 class Converter extends Component {
     render() {
 
-    const Wrapper = styled.div`
-        position: absolute;
-        height:120px;
-        width:800px;
-        font-size:12px;
-        background: #ffffff;
-        margin-left:60px; 
-        margin-top:-80px;
-        padding: 20px;
-        border: 2px solid #e6e6e6;
-        border-radius: 15px;
 
-    `;
-    
-    const Image = styled.img`
-        height:20px;
-        margin:35px 10px;
-    `;
-   
-    const Button = styled.button`
-        width:120px;
-        height:45px;
-        font-size:16px;
-        border: 2px solid #e6e6e6;
-        border-radius: 10px;
-        margin:22px 10px; 
-        background:#fa3838;
-        color: white;
-    `;
         return (
             <React.Fragment>
                 <Wrapper >
                 <div className="container">
                     
                 
-                <form onSubmit={this.props.submit}>
+                <form > 
                     <div className="form-row">
                         <div className="form-group col-sm-3">
                             <label >Amount</label>

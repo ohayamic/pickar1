@@ -32,7 +32,7 @@ const Para = styled.p`
                         <Para>{history.amount}{history.from}</Para>
                     </div>
                     <div className="col-sm">
-                        <Para primary>{8 + Math.random(history.amount)}{history.to}</Para>
+                        <Para primary>{history.amount + Math.random(history.amount)}{history.to}</Para>
                     </div>
                 </div>
             </div>
