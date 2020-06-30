@@ -45,7 +45,7 @@ const Display = ({state}) => {
                 <JumboDiv className="jumbotron">
                      <Link to ="/history"><ConvertHis>view conversion history <span><Image src={Right} alt="right" /></span></ConvertHis> </Link>
                     <P> {state.amount} {state.from} = </P>
-                    <ConvertedToDiv >{5 + Math.random(state.amount)} {state.tof}</ConvertedToDiv>
+                    <ConvertedToDiv >{state.amount + Math.random(state.amount) - 10} {state.tof}</ConvertedToDiv>
                 </JumboDiv>
             </React.Fragment>
         )

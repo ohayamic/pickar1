@@ -45,7 +45,7 @@ class Converter extends Component {
                     <div className="form-row">
                         <div className="form-group col-sm-3">
                             <label >Amount</label>
-                            <input type="text" className="form-control"  onChange={this.props.amount} />
+                            <input type="text" className="form-control"  onChange={this.props.amount}  placeholder="Enter Amount"/>
                         </div>
                         <div className="form-group col-sm-3">
                             <label >From</label>
