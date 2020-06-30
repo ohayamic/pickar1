@@ -36,41 +36,46 @@ class Converter extends Component {
     `;
         return (
             <React.Fragment>
-                <Wrapper class="container">
-
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">Amount</label>
-                            <input type="text" class="form-control" value="Enter Amount"/>
+                <Wrapper >
+                <div className="container">
+                    
+                
+                <form onSubmit={this.props.submit}>
+                    <div className="form-row">
+                        <div className="form-group col-sm-3">
+                            <label >Amount</label>
+                            <input type="text" className="form-control"  onChange={this.props.amount} />
                         </div>
-                        <div class="form-group col-md-3">
+                        <div className="form-group col-sm-3">
                             <label >From</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>USD</option>
-                                <option>EUR</option>
-                                <option>GBP</option>
-                                <option>CAN</option>
+                            <select className="form-control" id="exampleFormControlSelect1" onChange={this.props.from}>
+                                <option value="">Choose Currency</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR" >EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="CAD">CAD</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-1">
+                        <div className="form-group col-sm-1">
                             
                         <span><Image src={Exchange} alt="exchange" /></span>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div className="form-group col-sm-3">
                             <label >To</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>USD</option>
-                                <option>EUR</option>
-                                <option>GBP</option>
-                                <option>CAN</option>
+                            <select className="form-control" id="exampleFormControlSelect2" onChange={this.props.tof}>
+                                <option value="">Choose Currency</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="CAD">CAD</option>
                             </select>
                         </div>
-                        <div class="form-group col-md-2"> 
-                            <Button type="submit" >Convert</Button>
+                        <div className="form-group col-sm-2"> 
+                            <Button >Convert</Button>
                         </div>
                     </div>  
                 </form>
+                </div>
                 </Wrapper>   
         
             </React.Fragment>

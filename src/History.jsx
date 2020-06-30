@@ -1,10 +1,12 @@
 import React from 'react'
+import Hisheader from './Hisheader'
+import DisplayHistory from './DisplayHistory'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Left from './images/left.png'
 
 
-const History =( ) => {
+const History =({todos} ) => {
     
 
         const JumboDiv = styled.div`
@@ -27,10 +29,7 @@ const History =( ) => {
             color: #a6a6a6;
         `;
 
-        const Para = styled.p`
-        margin-left: ${props => props.primary ? "50px" : "20px"};
-        margin-top:-20px;
-        `;
+        
 
         const Image = styled.img`
         height:10px;
@@ -44,25 +43,8 @@ const History =( ) => {
                     <h1 className="display-5">pickar</h1>
                     <Link to="/"> <BackLink><span><Image src={Left} alt="Left" /></span>Go back </BackLink></Link>
                     <BodyDiv>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-sm" >
-                                <Para primary>
-                                Date
-                                </Para>
-                            </div>
-                            <div className="col-sm">
-                                <Para>
-                                From
-                                </Para>
-                            </div>
-                            <div className="col-sm">
-                                <Para>
-                                To
-                                </Para>
-                            </div>
-                        </div>
-                    </div>
+                        <Hisheader />
+                        <DisplayHistory histories={todos}/>
                     </BodyDiv>
                     
                 </JumboDiv>

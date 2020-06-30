@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import Right from './images/right.png'
 
 
-const Display = () => {
+const Display = ({state}) => {
 
     const JumboDiv = styled.div`
         margin-top: -30px;
         margin-bottom: 0px;
-         height: 800px;
+         height: 600px;
          background: #d6f5f5;
          color:white;
          padding-left: 140px;
@@ -30,7 +30,7 @@ const Display = () => {
     `;
     const P = styled.p`
       font-size: 22px;
-      margin: 80px 0px 10px 0px;
+      margin: 60px 0px 10px 0px;
       color: #4d4d4d;
     `;
 
@@ -44,8 +44,8 @@ const Display = () => {
             <React.Fragment>
                 <JumboDiv className="jumbotron">
                      <Link to ="/history"><ConvertHis>view conversion history <span><Image src={Right} alt="right" /></span></ConvertHis> </Link>
-                    <P> 1 EUR = </P>
-                    <ConvertedToDiv > 1.12392 USD</ConvertedToDiv>
+                    <P> {state.amount} {state.from} = </P>
+                    <ConvertedToDiv >{5 + Math.random(state.amount)} {state.tof}</ConvertedToDiv>
                 </JumboDiv>
             </React.Fragment>
         )

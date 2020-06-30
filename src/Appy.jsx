@@ -1,5 +1,5 @@
 const HistoryDiv = historys.length? 
-    (historys.map(history=>{
+    (historys.map(history => {
         return(
             <div className="container">
                 <div className="row">

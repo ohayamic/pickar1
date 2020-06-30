@@ -7,14 +7,14 @@ import Converter from './converter'
 
 class Main extends Component {
 
-    
+
     render() {
         
         return (
             <React.Fragment>
                 <Header />
-                <Converter />
-                <Display />
+                <Converter amount= {this.props.amount} from={this.props.from} tof={this.props.to} submit={this.props.submit}/>
+                <Display state={this.props.state}/>
                 
             </React.Fragment>
         )
